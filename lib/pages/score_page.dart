@@ -40,13 +40,15 @@ class ScorePage extends StatelessWidget {
             )
           ),
           new IconButton(
-            icon: new Icon(Icons.keyboard_arrow_right),
+            icon: new Icon(Icons.replay),
             color: Colors.white,
             iconSize: 100.0,
-            onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-              new MaterialPageRoute(builder: (context) {new LandingPage();}),
-              (Route route) => route = null,
-            ),
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                new MaterialPageRoute(builder: (context) => new LandingPage()),
+                    (Route route) => false,
+              );
+            },
           ),
         ],
       ),

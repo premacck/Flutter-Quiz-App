@@ -6,7 +6,7 @@ class LandingPage extends StatelessWidget {
 
   @override Widget build(BuildContext context) {
     return new Material(
-      color: Colors.blueGrey,
+      color: Colors.blue,
       child: new InkWell(
         onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new QuizPage())),
         child: new Column(

@@ -26,10 +26,15 @@ class ResultOverlayState extends State<ResultOverlay> with SingleTickerProviderS
     super.initState();
   }
 
+  @override void dispose() {
+    _iconAnimationController.dispose();
+    super.dispose();
+  }
+
   @override Widget build(BuildContext context) => new Material(
       color: Colors.black87,
       child: new InkWell(
-        onTap: widget._onTap,
+        onTap: () => widget._onTap(),
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
